@@ -12,10 +12,10 @@ development:
   adapter: postgresql
   encoding: unicode
   pool: 5
-  database: ddu1notpcfadvg
-  username: ldncjjnwtnjeso
-  password: DvXr7Ux-QekTK4gt3RO0R9faVc
-  host: ec2-54-204-37-113.compute-1.amazonaws.com
+  database: dcbh0agjntnlce
+  username: mpccgjgkcubcub
+  password: 8OOD__h8yelnNME5F8T52Y1EJY
+  host: ec2-54-225-101-199.compute-1.amazonaws.com
   port: 5432
 
 # Connect on a TCP socket. Omitted by default since the client uses a
@@ -40,18 +40,18 @@ test:
   adapter: postgresql
   encoding: unicode
   pool: 5
-  database: ddu1notpcfadvg
-  username: ldncjjnwtnjeso
-  password: DvXr7Ux-QekTK4gt3RO0R9faVc
-  host: ec2-54-204-37-113.compute-1.amazonaws.com
+  database: dcbh0agjntnlce
+  username: mpccgjgkcubcub
+  password: 8OOD__h8yelnNME5F8T52Y1EJY
+  host: ec2-54-225-101-199.compute-1.amazonaws.com
   port: 5432
 
 production:
   adapter: postgresql
   encoding: unicode
   pool: 5
-  database: ddu1notpcfadvg
-  username: ldncjjnwtnjeso
-  password: DvXr7Ux-QekTK4gt3RO0R9faVc
-  host: ec2-54-204-37-113.compute-1.amazonaws.com
+  database: dcbh0agjntnlce
+  username: mpccgjgkcubcub
+  password: 8OOD__h8yelnNME5F8T52Y1EJY
+  host: ec2-54-225-101-199.compute-1.amazonaws.com
   port: 5432

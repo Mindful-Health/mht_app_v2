@@ -1,4 +1,6 @@
 MhtAppV2::Application.routes.draw do
+  devise_for :users
+  resources :dashboard
   root  'static_pages#home'
 
   match '/about',   to: 'static_pages#about',   via: 'get'
