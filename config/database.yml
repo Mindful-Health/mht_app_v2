@@ -9,14 +9,14 @@
 # Choose the win32 build.
 # Install PostgreSQL and put its /bin directory on your path.
 development:
-   adapter: postgresql
-   encoding: unicode
-   pool: 5
-   database: d3a1fkk13ri98k
-   username: icloesekeueatm
-   password: T4r-tFF-8WWlaJkravezj8gmry
-   host: ec2-54-235-99-46.compute-1.amazonaws.com
-   port: 5432
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  database: ddu1notpcfadvg
+  username: ldncjjnwtnjeso
+  password: DvXr7Ux-QekTK4gt3RO0R9faVc
+  host: ec2-54-204-37-113.compute-1.amazonaws.com
+  port: 5432
 
 # Connect on a TCP socket. Omitted by default since the client uses a
 # domain socket that doesn't need configuration. Windows does not have
@@ -37,21 +37,21 @@ development:
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-   adapter: postgresql
-   encoding: unicode
-   pool: 5
-   database: d3a1fkk13ri98k
-   username: icloesekeueatm
-   password: T4r-tFF-8WWlaJkravezj8gmry
-   host: ec2-54-235-99-46.compute-1.amazonaws.com
-   port: 5432
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  database: ddu1notpcfadvg
+  username: ldncjjnwtnjeso
+  password: DvXr7Ux-QekTK4gt3RO0R9faVc
+  host: ec2-54-204-37-113.compute-1.amazonaws.com
+  port: 5432
 
 production:
-   adapter: postgresql
-   encoding: unicode
-   pool: 5
-   database: d3a1fkk13ri98k
-   username: icloesekeueatm
-   password: T4r-tFF-8WWlaJkravezj8gmry
-   host: ec2-54-235-99-46.compute-1.amazonaws.com
-   port: 5432
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  database: ddu1notpcfadvg
+  username: ldncjjnwtnjeso
+  password: DvXr7Ux-QekTK4gt3RO0R9faVc
+  host: ec2-54-204-37-113.compute-1.amazonaws.com
+  port: 5432
