@@ -1,4 +1,6 @@
 MhtAppV2::Application.routes.draw do
+  resources :patients
+
   devise_for :users
   resources :dashboard
   root  'static_pages#home'
