@@ -1,0 +1,29 @@
+<h1>Listing care_groups</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Patient</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @care_groups.each do |care_group| %>
+      <tr>
+        <td><%= care_group.user_id %></td>
+        <td><%= care_group.patient_id %></td>
+        <td><%= link_to 'Show', care_group %></td>
+        <td><%= link_to 'Edit', edit_care_group_path(care_group) %></td>
+        <td><%= link_to 'Destroy', care_group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Care group', new_care_group_path %>

@@ -1,0 +1,25 @@
+<%= form_for(@care_group) do |f| %>
+  <% if @care_group.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@care_group.errors.count, "error") %> prohibited this care_group from being saved:</h2>
+
+      <ul>
+      <% @care_group.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :patient_id %><br>
+    <%= f.number_field :patient_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

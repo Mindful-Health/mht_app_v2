@@ -1,4 +1,6 @@
 MhtAppV2::Application.routes.draw do
+  resources :care_groups
+
   resources :patients
 
   devise_for :users

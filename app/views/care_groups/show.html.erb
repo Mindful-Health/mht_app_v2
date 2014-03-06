@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @care_group.user_id %>
+</p>
+
+<p>
+  <strong>Patient:</strong>
+  <%= @care_group.patient_id %>
+</p>
+
+<%= link_to 'Edit', edit_care_group_path(@care_group) %> |
+<%= link_to 'Back', care_groups_path %>
