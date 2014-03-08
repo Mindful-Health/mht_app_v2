@@ -3,8 +3,7 @@
 <table>
   <thead>
     <tr>
-      <th>User</th>
-      <th>Patient</th>
+      <th>Name</th>
       <th></th>
       <th></th>
       <th></th>
@@ -14,8 +13,7 @@
   <tbody>
     <% @care_groups.each do |care_group| %>
       <tr>
-        <td><%= care_group.user_id %></td>
-        <td><%= care_group.patient_id %></td>
+        <td><%= care_group.name %></td>
         <td><%= link_to 'Show', care_group %></td>
         <td><%= link_to 'Edit', edit_care_group_path(care_group) %></td>
         <td><%= link_to 'Destroy', care_group, method: :delete, data: { confirm: 'Are you sure?' } %></td>

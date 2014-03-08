@@ -69,6 +69,6 @@ class CareGroupsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def care_group_params
-      params.require(:care_group).permit(:user_id, :patient_id)
+      params.require(:care_group).permit(:name)
     end
 end

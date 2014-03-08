@@ -23,7 +23,7 @@ describe CareGroupsController do
   # This should return the minimal set of attributes required to create a valid
   # CareGroup. As you add validations to CareGroup, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) { { "user_id" => "1" } }
+  let(:valid_attributes) { { "name" => "MyString" } }
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
@@ -85,14 +85,14 @@ describe CareGroupsController do
       it "assigns a newly created but unsaved care_group as @care_group" do
         # Trigger the behavior that occurs when invalid params are submitted
         CareGroup.any_instance.stub(:save).and_return(false)
-        post :create, {:care_group => { "user_id" => "invalid value" }}, valid_session
+        post :create, {:care_group => { "name" => "invalid value" }}, valid_session
         assigns(:care_group).should be_a_new(CareGroup)
       end
 
       it "re-renders the 'new' template" do
         # Trigger the behavior that occurs when invalid params are submitted
         CareGroup.any_instance.stub(:save).and_return(false)
-        post :create, {:care_group => { "user_id" => "invalid value" }}, valid_session
+        post :create, {:care_group => { "name" => "invalid value" }}, valid_session
         response.should render_template("new")
       end
     end
@@ -106,8 +106,8 @@ describe CareGroupsController do
         # specifies that the CareGroup created on the previous line
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
-        CareGroup.any_instance.should_receive(:update).with({ "user_id" => "1" })
-        put :update, {:id => care_group.to_param, :care_group => { "user_id" => "1" }}, valid_session
+        CareGroup.any_instance.should_receive(:update).with({ "name" => "MyString" })
+        put :update, {:id => care_group.to_param, :care_group => { "name" => "MyString" }}, valid_session
       end
 
       it "assigns the requested care_group as @care_group" do
@@ -128,7 +128,7 @@ describe CareGroupsController do
         care_group = CareGroup.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         CareGroup.any_instance.stub(:save).and_return(false)
-        put :update, {:id => care_group.to_param, :care_group => { "user_id" => "invalid value" }}, valid_session
+        put :update, {:id => care_group.to_param, :care_group => { "name" => "invalid value" }}, valid_session
         assigns(:care_group).should eq(care_group)
       end
 
@@ -136,7 +136,7 @@ describe CareGroupsController do
         care_group = CareGroup.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         CareGroup.any_instance.stub(:save).and_return(false)
-        put :update, {:id => care_group.to_param, :care_group => { "user_id" => "invalid value" }}, valid_session
+        put :update, {:id => care_group.to_param, :care_group => { "name" => "invalid value" }}, valid_session
         response.should render_template("edit")
       end
     end
