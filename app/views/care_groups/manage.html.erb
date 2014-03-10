@@ -1,0 +1,20 @@
+<h1>Manage Care Group Members</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+  <% @patients.each do |patient| %>
+      <tr>
+        <td><%= patient.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

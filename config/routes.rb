@@ -1,14 +1,24 @@
 MhtAppV2::Application.routes.draw do
-  resources :care_groups
+  resources :care_groups do
+    member do
+      get 'manage'
+    end
+  end
 
   resources :patients
 
   devise_for :users
-  resources :dashboard
+
+  resources :dashboard do
+  collection do 
+    get 'patient'
+  end 
+end
   root  'static_pages#home'
 
   match '/about',   to: 'static_pages#about',   via: 'get'
   match '/contact', to: 'static_pages#contact', via: 'get'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

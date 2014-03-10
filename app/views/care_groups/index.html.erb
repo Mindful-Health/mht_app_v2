@@ -16,6 +16,7 @@
         <td><%= care_group.name %></td>
         <td><%= link_to 'Show', care_group %></td>
         <td><%= link_to 'Edit', edit_care_group_path(care_group) %></td>
+        <td><%= link_to 'Manage Members', manage_care_group_path(care_group) %></td>
         <td><%= link_to 'Destroy', care_group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

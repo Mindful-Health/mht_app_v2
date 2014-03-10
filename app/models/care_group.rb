@@ -1,4 +1,4 @@
 class CareGroup < ActiveRecord::Base
-	has_many :patients
-	has_many :users
+	belongs_to :patients
+	belongs_to :users
 end

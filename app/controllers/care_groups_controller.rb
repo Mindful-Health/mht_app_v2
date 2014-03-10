@@ -1,5 +1,5 @@
 class CareGroupsController < ApplicationController
-  before_action :set_care_group, only: [:show, :edit, :update, :destroy]
+  before_action :set_care_group, only: [:show, :edit, :update, :destroy, :manage]
 
   # GET /care_groups
   # GET /care_groups.json
@@ -19,6 +19,10 @@ class CareGroupsController < ApplicationController
 
   # GET /care_groups/1/edit
   def edit
+  end
+
+  def manage
+    @patients = CareGroup.find(params[:id]).patients
   end
 
   # POST /care_groups
