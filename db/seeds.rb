@@ -5,5 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-Patient_Data.create(device_id: 1, spo2: 85, heart_rate: 88, 
-					transmission_time: DateTime.new(2014, 3, 9, 3, 3, 43, 0), patient_id: 1)
+
+50.times do |i|
+PatientData.create(device_id: 1, spo2: (80+Random.rand(105-80)), heart_rate: (50+Random.rand(105-50)), 
+					transmission_time: DateTime.new(2014, 3, 9, 3, i), patient_id: 1)
+
+end
