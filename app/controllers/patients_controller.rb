@@ -61,6 +61,13 @@ class PatientsController < ApplicationController
     end
   end
 
+  def data
+      @data = PatientData.where(:patient_id => params[:patient_id])
+      respond_to do |format|
+        format.json { render json: @data}
+      end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_patient
@@ -71,4 +78,6 @@ class PatientsController < ApplicationController
     def patient_params
       params.require(:patient).permit(:name, :email, :phone, :condition, :deviceId)
     end
+
+    
 end

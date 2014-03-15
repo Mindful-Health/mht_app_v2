@@ -5,7 +5,11 @@ MhtAppV2::Application.routes.draw do
     end
   end
 
-  resources :patients
+  resources :patients do
+  collection do 
+    post 'data'
+  end 
+end
 
   devise_for :users
 
