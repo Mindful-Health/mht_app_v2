@@ -12,6 +12,12 @@ gem 'bootswatch-rails'
 gem 'devise'
 gem "flot-rails", "~> 0.0.4"
 
+#gemfiles for GSM network process
+gem 'clockwork'
+gem 'xively-rb', '~> 0.2.10'
+gem 'eventmachine'
+gem 'unicorn'
+
 group :development, :test do
   #gem 'sqlite3', '1.3.8'
   gem 'rspec-rails', '2.13.1'
