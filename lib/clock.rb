@@ -1,8 +1,22 @@
-require File.expand_path('../../config/boot',        __FILE__)
-require File.expand_path('../../config/environment', __FILE__)
 require 'clockwork'
+require 'clockwork/manager_with_database_tasks'
+require_relative './config/boot'
+require_relative './config/environment'
 
-include Clockwork
+require 'clockwork'
+module Clockwork
+  handler do |job|
+    puts "Running #{job}"
+  end
 
-every(4.minutes, 'Queueing interval job') { Delayed::Job.enqueue IntervalJob.new }
-every(1.day, 'Queueing scheduled job', :at => '14:17') { Delayed::Job.enqueue ScheduledJob.new }
+  # handler receives the time when job is prepared to run in the 2nd argument
+  # handler do |job, time|
+  #   puts "Running #{job}, at #{time}"
+  # end
+
+  every(10.seconds, 'frequent.job')
+  every(3.minutes, 'less.frequent.job')
+  every(1.hour, 'hourly.job')
+
+  every(1.day, 'midnight.job', :at => '00:00')
+end
