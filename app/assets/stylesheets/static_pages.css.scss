@@ -1,3 +1,100 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* all static pages */
+
+body { padding-top: 60px; }
+
+/* header */
+
+#mh {
+  padding-right: 20px;
+  text-align: right;
+  color: black;
+}
+
+#logo {
+  float: left;
+  font-size: 1.7em;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  line-height: 1;
+  margin-left: 5%;
+}
+
+#home_about_nav {
+  margin-right:1%;
+  padding-top: 10px;
+  a {
+    margin-left: 5px;
+  }
+}
+
+.nav li{
+  display:inline;
+  color: white;
+}
+
+.nav li a{
+  display:inline;
+  color: white;
+}
+
+/*background image*/
+
+#home_page_hero_unit {
+  background-image: url(http://s3.amazonaws.com/mht_assets/images/doc.jpg);
+  background-size: 100%;
+  background-repeat:no-repeat;
+  height: 480px;
+ 
+}
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+#solution_row {
+
+  margin:0 auto;
+  text-align: center;
+}
+
+.center {
+  text-align: center;
+}
+
+/*about page*/
+
+img {
+  height: 250px;
+  width: 250px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.about {
+  margin-top: 10px;  
+}
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid;
+  color: gray;
+
+  ul {
+    float: right;
+    list-style: none;
+    margin-right:10px;
+    li {
+      float: left;
+      margin-left: 10px;
+    }
+  }
+}
