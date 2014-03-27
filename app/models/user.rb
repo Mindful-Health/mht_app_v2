@@ -6,4 +6,21 @@ class User < ActiveRecord::Base
 
   has_one :care_group
   has_many :patients, through: :care_group
+
+  def login=(login)
+  	@login = login
+  end
+
+  def login
+  	@login || self.username || self.email
+  end
+
+  def self.find_first_by_auth_conditions(warden_conditions)
+    conditions = warden_conditions.dup
+    if login = conditions.delete(:login)
+      where(conditions).where(["lower(username) = :value OR lower(email) = :value", { :value => login.downcase }]).first
+    else
+      where(conditions).first
+    end
+  end
 end
