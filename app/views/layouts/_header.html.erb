@@ -8,14 +8,14 @@
 			<a><%= link_to "Home", root_path %></a>
 
 			<% if user_signed_in? %> 
-                <li><%= link_to "Profile", '#' %></li>
-                <li><%= link_to "Settings", '#'%></li>
-				<li><%= link_to "Sign out", '#', :method => :delete %><li>
+                <li><%= link_to "Profile", edit_user_registration_path %></li>
+                <li><%= link_to "Settings", '#'%></li> <!-- what types of settings do we need?-->
+				<li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %><li>
 			
 			<% else %>
 				<li><%= link_to "Meet the Team", about_path %></li>
-				<li><%= link_to "Login", '#' %></li>
-				<li><%= link_to "Sign Up", '#' %></li>
+				<li><%= link_to "Login", new_user_session_path %></li>
+				<li><%= link_to "Sign Up", new_user_registration_path %></li>
 			<% end %>
 		</ul>
 	</div>

@@ -23,6 +23,13 @@ end
   match '/about',   to: 'static_pages#about',   via: 'get'
   match '/contact', to: 'static_pages#contact', via: 'get'
 
+  match '/signup', to: 'devise/registrations#new', via: 'get'
+  match '/profile', to: 'devise/registrations#edit', via: 'get'
+
+  match '/signin', to: 'devise/sessions#new', via: 'get'
+  match '/signout', to: 'devise/sessions#destroy', via: 'get'
+  
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
