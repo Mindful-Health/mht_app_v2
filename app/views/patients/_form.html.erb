@@ -2,36 +2,25 @@
   <% if @patient.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@patient.errors.count, "error") %> prohibited this patient from being saved:</h2>
-
       <ul>
-      <% @patient.errors.full_messages.each do |msg| %>
+        <% @patient.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :phone %><br>
-    <%= f.text_field :phone %>
-  </div>
-  <div class="field">
-    <%= f.label :condition %><br>
-    <%= f.text_area :condition %>
-  </div>
-  <div class="field">
-    <%= f.label :deviceId %><br>
-    <%= f.number_field :deviceId %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<div class="container">
+  <div class ="jumbotron patient">
+    <form role="form">    
+      <div class="form-group"><%= f.label :name %><br />
+        <%= f.text_field :name, :class =>'input' %></div>
+      <div class="form-group"><%= f.label :email %><br />
+        <%= f.text_field :email, :class => 'input' %></div>
+      <div class="form-group"><%= f.label :phone %><br />
+        <%= f.text_field :phone, :class => 'input' %></div>
+      <div class="form-group"><%= f.label :condition %><br />
+        <%= f.text_area :condition, :class => 'input' %></div>
+      <div class="form-group"><%= f.label :deviceId %><br />
+        <%= f.number_field :deviceId, :class => 'input' %></div>
+      <div class="actions"><%= f.submit "Submit", :class => 'btn btn-small btn-primary' %></div>
 <% end %>

@@ -1,35 +1,39 @@
-<h1>Listing patients</h1>
+<div class="container">
+  <h1 class="text-center">Listing patients</h1>
+  <div class="row">
+    <div class="col-lg-12">
+      <table class="table" id="table">
+        <thead>
+          <tr>
+            <th class="text-center">Name</th>
+            <th class="text-center">Email</th>
+            <th class="text-center">Phone</th>
+            <th class="text-center">Condition</th>
+            <th class="text-center">Device ID</th>
+          </tr>
+        </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Phone</th>
-      <th>Condition</th>
-      <th>Deviceid</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @patients.each do |patient| %>
-      <tr>
-        <td><%= patient.name %></td>
-        <td><%= patient.email %></td>
-        <td><%= patient.phone %></td>
-        <td><%= patient.condition %></td>
-        <td><%= patient.deviceId %></td>
-        <td><%= link_to 'Show', patient %></td>
-        <td><%= link_to 'Edit', edit_patient_path(patient) %></td>
-        <td><%= link_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <tbody>
+          <% @patients.each do |patient| %>
+          <tr>
+            <td><%= patient.name %></td>
+            <td><%= patient.email %></td>
+            <td><%= patient.phone %></td>
+            <td><%= patient.condition %></td>
+            <td><%= patient.deviceId %></td>
+          
+            <td> <a class="plinks"><%= link_to 'Show', patient %></a>
+              <a class="plinks"><%= link_to 'Edit', edit_patient_path(patient) %></a>
+              <a class="plinks"><%= link_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?' } %></a>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
 
 <br>
 
 <%= link_to 'New Patient', new_patient_path %>
+</div>
