@@ -37,3 +37,13 @@
 
 <%= link_to 'New Patient', new_patient_path %>
 </div>
+    <script type="text/javascript" charset="utf-8">
+      $(document).ready(function() {
+        $("table").tablecloth({
+          theme: "paper",
+          striped: true,
+          sortable: true,
+          condensed: true
+        });
+      });
+      </script>

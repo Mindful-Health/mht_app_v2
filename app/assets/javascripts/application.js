@@ -17,3 +17,13 @@
 //= require jquery.flot.resize
 //= require jquery.flot.time
 //= require_tree .
+
+$(document).ready(function() {
+        $('.table').tablecloth({
+          theme: "dark",
+          striped: true,
+          sortable: true,
+          condensed: true
+        });
+      });
+

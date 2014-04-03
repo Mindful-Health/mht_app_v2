@@ -11,6 +11,7 @@ gem 'bootstrap-will_paginate', '0.0.9'
 gem 'bootswatch-rails'
 gem 'devise'
 gem "flot-rails", "~> 0.0.4"
+gem 'tablecloth-rails', '~> 1.0.101'
 
 #gemfiles for GSM network process
 gem 'clockwork'
@@ -20,12 +21,12 @@ gem 'unicorn'
 
 group :development, :test do
   #gem 'sqlite3', '1.3.8'
-  gem 'rspec-rails', '2.13.1'
+  gem 'rspec-rails', '2.14.0'
 end
 
 group :test do
   gem 'selenium-webdriver', '2.35.1'
-  gem 'capybara', '2.1.0'
+  gem 'capybara', '2.2.0'
   gem 'factory_girl_rails', '4.2.1'
 end
 
