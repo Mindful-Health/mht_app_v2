@@ -4,11 +4,22 @@
 
 /* all static pages */
 
-body { padding-top: 60px; }
+body { 
+  padding-top: 30px;
+  background-color: #B5B5B5; 
+  
+}
+
+/*fixed top navbar*/
+
+#fixednav {
+  background-color: white;
+}
 
 /* header */
 
 #mh {
+  padding-top: 30px;
   padding-right: 20px;
   text-align: right;
   color: black;
@@ -17,7 +28,7 @@ body { padding-top: 60px; }
 #logo {
   float: left;
   font-size: 1.7em;
-  color: white;
+  color: #0092D7;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;

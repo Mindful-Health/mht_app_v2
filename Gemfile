@@ -12,6 +12,12 @@ gem 'bootswatch-rails'
 gem 'devise'
 gem "flot-rails", "~> 0.0.4"
 gem 'tablecloth-rails', '~> 1.0.101'
+gem 'twitter-bootswatch-rails', '~> 3.1.1'
+gem 'twitter-bootswatch-rails-helpers'
+gem 'twitter-bootswatch-rails-fontawesome'
+gem 'therubyracer'
+gem 'less-rails'
+
 
 #gemfiles for GSM network process
 gem 'clockwork'
