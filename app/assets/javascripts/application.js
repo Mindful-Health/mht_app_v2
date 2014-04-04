@@ -18,12 +18,3 @@
 //= require jquery.flot.time
 
 
-$(document).ready(function() {
-        $('.table').tablecloth({
-          theme: "dark",
-          striped: true,
-          sortable: true,
-          condensed: true
-        });
-      });
-

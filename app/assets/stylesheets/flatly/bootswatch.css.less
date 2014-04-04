@@ -90,7 +90,7 @@ img {
   margin-top: 10px;
 }
 
-.about {
+.header {
   padding-top: 20px;  
 }
 
@@ -107,80 +107,57 @@ img {
 
 #row-top {
   padding-top: 30px;
-  position: relative;
+  
 }
-/*sidebar*/
+
 
 
 .dbjumbo {
-  margin-top: 15px;
-  margin-bottom:10px;
+  padding-top: 30px;
+  margin-bottom:30px;
   position: relative;
-  height: 220px;
+  height: 250px;
 }
 
 .well {
-  margin-top: 10px;
+  margin-top: 30px;
 }
+//sidebar=========================================================
 
 #sidebar-wrapper {
-  margin-left:-250px;
-  margin-right:0px;
-  left: 250px;
-  width: 155px;
-  position: fixed;
+  float: left;
+  width: 17%;
   height: 100%;
   overflow-y: auto;
   z-index: 1000;
   transition: all 0.4s ease 0s;
+  padding-top: 45px;
+  padding-right:35px;
+  background: -webkit-linear-gradient(left, #F2F6F6, #F2F6F6 ); /* For Safari 5.1 to 6.0 */
+background: -o-linear-gradient(right, #F2F6F6, #F2F6F6); /* For Opera 11.1 to 12.0 */
+background: -moz-linear-gradient(right, #F2F6F6, #F2F6F6); /* For Firefox 3.6 to 15 */
+background: linear-gradient(to right, #F2F6F6, #F2F6F6); /* Standard syntax */
+
 }
 
 .sidebar-nav {
-  position: absolute;
-  top: 0;
-  width: 160px;
   list-style: none;
-  margin: 0;
-  padding: 0;
-  padding-top:60px;
+  height: 700px;
+    li {
+       margin-top: 8px;
+        margin-bottom: 8px;
+        text-decoration:underline;
+    }
+
 }
 
-.sidebar-nav li {
-  line-height: 40px;
-  text-indent: 20px;
+.dbbody{
+  margin-left: 5%;
+  border-left-width: 2px;
+  border-left-color: black;
 }
 
-.sidebar-nav li a {
-  color: #999999;
-  display: block;
-  text-decoration: none;
-}
 
-.sidebar-nav li a:hover {
-  color: #fff;
-  background: rgba(255,255,255,0.2);
-  text-decoration: none;
-}
-
-.sidebar-nav li a:active,
-.sidebar-nav li a:focus {
-  text-decoration: none;
-}
-
-.sidebar-nav > .sidebar-brand {
-  height: 65px;
-  line-height: 60px;
-  font-size: 18px;
-}
-
-.sidebar-nav > .sidebar-brand a {
-  color: #999999;
-}
-
-.sidebar-nav > .sidebar-brand a:hover {
-  color: #fff;
-  background: none;
-}
 
 // Form pages w/ devise =======================================================
 
@@ -251,7 +228,7 @@ img {
 
 table,
 .table {
-
+  padding-right: 20px;
   a {
     text-decoration: underline;
   }

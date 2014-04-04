@@ -168,8 +168,6 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
-    tablecloth-rails (1.0.101)
-      railties (>= 3.1)
     therubyracer (0.12.1)
       libv8 (~> 3.16.14.0)
       ref
@@ -233,7 +231,6 @@ DEPENDENCIES
   flot-rails (~> 0.0.4)
   jbuilder (= 1.0.2)
   jquery-rails (= 3.0.4)
-  less-rails
   pg (= 0.15.1)
   rails (= 4.0.2)
   rails_12factor (= 0.0.2)
@@ -241,7 +238,6 @@ DEPENDENCIES
   sass-rails (~> 4.0.2)
   sdoc (= 0.3.20)
   selenium-webdriver (= 2.35.1)
-  tablecloth-rails (~> 1.0.101)
   therubyracer
   turbolinks (= 1.1.1)
   twitter-bootswatch-rails (~> 3.1.1)
