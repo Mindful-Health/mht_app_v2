@@ -12,12 +12,6 @@
 	<%= render 'layouts/header' %>    
 <% if user_signed_in? %>
 	<%= render 'layouts/sidebar'%>
-	
-	<div id="page-content-wrapper">
-        <!-- Keep all page content within the page-content inset div! -->
-        <div class="page-content inset">
-
-
 
 <% end %>
 <%= yield %>

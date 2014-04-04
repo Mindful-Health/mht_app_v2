@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<div class= "dbbody">
+<div class= "container-fluid dbbody">
           <div class="row" id="row-top">
             <div class="col-md-12">
                 <h2 class="text-center">Mindful Health Dashboard Overview</h2>
@@ -36,15 +36,16 @@
               </div>
             </div>
           </div>
+          
           <div class ="row">
-            <div class="col-md-6">
+            <div class="col-md-6 col-sm-4 col-xs-3">
               <div class="jumbotron text-center dbjumbo">
                 <h2>Manage Patients</h2>
                 <p>Add patients, remove exsisting patients, and more.</p>
                 <div class="links"><%= link_to "Manage Patients", patients_path, :class => 'btn btn-lg btn-primary' %></div>
               </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 col-sm-4 col-xs-3">
               <div class="jumbotron text-center dbjumbo">
                 <h2>Manage Care Team</h2>
                 <p>Configure care team memberships and profiles.</p>
@@ -52,23 +53,30 @@
               </div>
             </div>
           </div>
+      
           <div class="row">
-            <div class="col-md-4">
-              <div class="well well-sm">
+            <div class="col-md-4 col-sm-4">
+              <div class="well well-sm text-center welldb">
                 <b>Recent user activity</b>
-                <a href="#" class="btn btn-xs pull-right btn-info">Review Activity</a>
+                <div class="row">
+                  <a href="#" class="btn btn-xs btn-info">Review Activity</a>
+                </div>
               </div>
             </div>
-            <div class="col-md-4">
-              <div class="well well-sm">
+            <div class="col-md-4 col-sm-4">
+              <div class="well well-sm text-center">
                 <b>Physician on staff: Dr. Robertson</b>
-                <a href="#" class="btn btn-xs pull-right btn-info">Contact Now</a>
+                <div class="row">
+                  <a href="#" class="btn btn-xs btn-info">Contact Now</a>
+                </div>
               </div>
             </div>
-            <div class="col-md-4">
-              <div class="well well-sm">
+            <div class="col-md-4 col-sm-4">
+              <div class="well well-sm text-center">
                 <b>Questions? Contact Mindful Health</b>
-                <a><%= link_to "Contact Us", contact_path, :class => 'btn btn-xs pull-right btn-info' %></a>
+                <div class="row">
+                  <a><%= link_to "Contact Us", contact_path, :class => 'btn btn-xs btn-info' %></a>
+                </div>
               </div>
             </div>
           </div>
