@@ -27,3 +27,20 @@
 
 <%= link_to 'Edit', edit_patient_path(@patient) %> |
 <%= link_to 'Back', patients_path %>
+
+<div class="row patient">
+    <div class="col-sm-7 col-md-8 col-lg-9 pull-right about">
+        <h4><u>Patient Metrics</u></h4>
+        <button type="button" class="btn btn-default" id="btnAutoRefresh">Auto Refresh</button>
+
+<!--         <div class="btn-group"> -->
+      <button  type="button" class="btn btn-default" id="24hr_data">24 Hours</button>
+      <button  type="button" class="btn btn-default" id="1wk_data">1 Week</button>
+<!--     </div> -->
+
+        <div class="demo-container">
+      <div id="placeholder" style="width:700px;height:375px;" class="demo-placeholder">
+      </div>
+    </div>
+    </div>    
+</div>

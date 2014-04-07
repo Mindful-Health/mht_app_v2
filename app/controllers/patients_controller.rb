@@ -63,7 +63,14 @@ class PatientsController < ApplicationController
   end
 
   def data
-      @data = PatientData.where(:patient_id => params[:patient_id])
+      @mode = params[:mode]
+      
+      @data = PatientData.where(:patient_id => params[:patient_id]).order(transmission_time: :asc).limit(96)
+
+      if(@mode == "1 week")
+        @data = PatientData.where(:patient_id => params[:patient_id]).order(transmission_time: :asc)
+      end
+      
       respond_to do |format|
         format.json { render json: @data}
       end
