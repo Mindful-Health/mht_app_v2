@@ -12,12 +12,16 @@
 	<%= render 'layouts/header' %>    
 <% if user_signed_in? %>
 	<%= render 'layouts/sidebar'%>
+		<div class="container-fluid"id = "page-content-wrapper">
+			<div class="page-content inset">
 
-<% end %>
-<%= yield %>
-<%= render 'layouts/footer' %>
 
-		</div>
-    </div>
+			<% end %>
+			<%= yield %>
+			
+
+			</div>
+    	</div>
+    	<%= render 'layouts/footer' %>
 </body>
 </html>

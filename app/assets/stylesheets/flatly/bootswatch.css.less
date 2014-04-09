@@ -104,6 +104,13 @@ img {
   
 }
 
+#page-content-wrapper {
+  width: 100%;
+  padding-right:20px;
+  padding-left:250px;
+  position: relative;
+
+}
 
 
 .dbjumbo {
@@ -122,38 +129,49 @@ img {
     margin-top: 20px;
   }
 }
-.dbbody{
-  margin-left: 13%;
 
-  position: absolute;
-}
 
 
 //sidebar=========================================================
 
 #sidebar-wrapper {
   float: left;
+  margin-right: 150px;
   width: 17%;
   height: 100%;
-  overflow-y:scroll;
+  overflow-y: auto;
+  position: fixed;
   z-index: 1000;
   transition: all 0.4s ease 0s;
   padding-top: 45px;
-  padding-right:35px;
+  
+
+
   background: -webkit-linear-gradient(left, #F2F6F6, #F2F6F6 ); /* For Safari 5.1 to 6.0 */
-background: -o-linear-gradient(right, #F2F6F6, #F2F6F6); /* For Opera 11.1 to 12.0 */
-background: -moz-linear-gradient(right, #F2F6F6, #F2F6F6); /* For Firefox 3.6 to 15 */
-background: linear-gradient(to right, #F2F6F6, #F2F6F6); /* Standard syntax */
+  background: -o-linear-gradient(right, #F2F6F6, #F2F6F6); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, #F2F6F6, #F2F6F6); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, #F2F6F6, #F2F6F6); /* Standard syntax */
 
 }
 
 .sidebar-nav {
   list-style: none;
-  height: 700px;
+    
+    h4{
+      padding-left: 5px;
+    }
+
     li {
        margin-top: 8px;
        margin-bottom: 8px;
        text-decoration:underline;
+       line-height: 40px;
+       text-indent: 20px;
+
+       a {
+        display: block;
+        text-decoration: none;
+       }
     }
 
 }
@@ -168,12 +186,13 @@ background: linear-gradient(to right, #F2F6F6, #F2F6F6); /* Standard syntax */
   height: auto !important; 
 }
 
-.jumbotron {
+.header {
+  .jumbotron {
   margin: auto;
   width: 550px;
   padding-bottom: 10px;
   padding-top: 10px;
-
+  }
 }
 
 .forms {
