@@ -2,7 +2,7 @@
 
 <div class="well sidebar-nav"id="sidebar-wrapper">
   <ul class="nav" id="side-nav">
-  	<h4 class="row text-left"><u>Patient Managment</u></h4>
+  	<h4 class="row text-left">Patient Managment</h4>
   		<div class="row text-left" id="patient_names"> 
   			<% Patient.all.find_each do |patient| %>
       		<li><a><%= link_to patient.name , patient_path(patient) %></a></li>

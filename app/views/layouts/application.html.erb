@@ -9,19 +9,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<%= render 'layouts/header' %>    
-<% if user_signed_in? %>
-	<%= render 'layouts/sidebar'%>
-		<div class="container-fluid"id = "page-content-wrapper">
-			<div class="page-content inset">
+	<%= render 'layouts/header' %>  
+
+	<% if user_signed_in? %>
+		<%= render 'layouts/sidebar'%>
+			<div class="container" id ="page-content-wrapper">
+				<div class="page-content inset">
 
 
-			<% end %>
-			<%= yield %>
-			
+				<% end %>
+				<%= yield %>
+				
 
-			</div>
-    	</div>
-    	<%= render 'layouts/footer' %>
+				</div>
+	    	</div>
+   <%= render 'layouts/footer' %>   	
 </body>
 </html>
