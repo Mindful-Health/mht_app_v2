@@ -1,6 +1,13 @@
 <div class="container">
-	<div class="row"><%= render 'form' %>
-	<div class="links"><%= link_to 'Back', patients_path %></div></div>
+	<form class="form-horizontal p-and-cg" role="form">
+	    <div class="jumbotron">
+	    <fieldset>
+	      <legend class="text-center"> New Patient </legend> 
+		  <%= render 'form' %>
+		</fieldset>
+	    </div>
+	</form>
+	<div class="links"><%= link_to 'Back', patients_path %></div>
 </div>
 
 <!--<div class="container">

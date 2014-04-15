@@ -1,6 +1,12 @@
-<h1>Editing patient</h1>
+<div class="container">
+	<form class="form-horizontal p-and-cg" role="form">
+	    <div class="jumbotron">
+	    <fieldset>
+	      <legend class="text-center"> Edit <%=@patient.name%> </legend> 
+		  <%= render 'form' %>
+		</fieldset>
+	    </div>
+	</form>
+	<div class="links"><%= link_to 'Show', @patient %> | <%= link_to 'Back', patients_path %></div>
+</div>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', @patient %> |
-<%= link_to 'Back', patients_path %>

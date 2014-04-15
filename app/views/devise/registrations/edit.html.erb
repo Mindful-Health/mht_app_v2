@@ -4,36 +4,58 @@
   <%= devise_error_messages! %>
 
   <div class="container">
-    <div class ="jumbotron">
-      <h2 class="text-center">Edit Profile</h2>
-      <form role="form">
-        <div class="form-group"><%= f.label :username %><br />
-        <%= f.text_field :username, :autofocus => true, :class =>'input' %></div>
+  <form class="form-horizontal devise-edit" role="form">
+    <div class="jumbotron devise-edit ">
+      <fieldset>
+        <legend class="text-center"> Edit Account </legend>  
 
-        <div class="form-group"><%= f.label :email %><br />
-        <%= f.email_field :email, :autofocus => true, :class =>'input' %></div>
+        <div class="form-group"><%= f.label :username, :class => 'col-lg-2 control-label' %>
+          <div class="col-lg-10">
+            <%= f.text_field :username, :autofocus => true, :class =>'input form-control' %>
+          </div>
+        </div>
+
+        <div class="form-group"><%= f.label :email, :class => 'col-lg-2 control-label' %>
+          <div class="col-lg-10">
+            <%= f.email_field :email, :autofocus => true, :class =>'input form-control' %>
+          </div>
+        </div>
 
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
           <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
         <% end %>
 
-        <div class="form-group"><%= f.label :password %> <small><i>leave blank if you don't want to change it</i></small><br />
-        <%= f.password_field :password, :autocomplete => "off", :class =>'input' %></div>
+        <div class="form-group"><%= f.label :password, :class => 'col-lg-2 control-label' %>
+          <div class="col-lg-10">
+            <%= f.password_field :password, :autocomplete => "off", :class =>'input form-control', :placeholder => "leave blank if you don't want to change it" %>
+          </div>
+        </div>
 
-        <div class="form-group"><%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, :class =>'input' %></div>
+        <div class="form-group"><%= f.label :password_confirmation, :class => 'col-lg-2 control-label' %>
+          <div class="col-lg-10">
+            <%= f.password_field :password_confirmation, :class =>'input form-control' %>
+          </div>
+        </div>
 
-        <div class="form-group"><%= f.label :current_password %> <small><i>to confirm your changes</i></small><br />
-        <%= f.password_field :current_password, :class =>'input' %></div>
-
-        <div><%= f.submit "Update", :class => 'btn btn-small btn-primary' %></div>
+        <div class="form-group"><%= f.label :current_password, :class => 'col-lg-2 control-label' %> 
+          <div class="col-lg-10">
+            <%= f.password_field :current_password, :class =>'input form-control', :placeholder => "to confirm your changes" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-lg-10 col-lg-offset-2">
+            <%= f.submit "Update", :class => 'btn btn-small btn-primary' %>
+          </div>
+        </div>
+      <legend class="text-center"><u>Cancel my account</u></legend>
+      <div class="form-group">
+          <div class="col-lg-10 col-lg-offset-2">
+            <lablel> Unhappy?</label>
+          <%= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :class => 'btn btn-small btn-danger',:method => :delete %></div>
+          <div class=" row links"><%= link_to "Back", :back %></div> 
+      </div>
       <% end %>
-      </form>
-      <h3 class="text-center">Cancel my account</h3>
-
-      <p class="text-left" id="unhappy">Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :class => 'btn btn-small btn-danger',:method => :delete %></p>
-
-      <div class="links"><%= link_to "Back", :back %></div>
-
-  </div>
+      </fieldset>
+    </div>
+  </form>
 </div>

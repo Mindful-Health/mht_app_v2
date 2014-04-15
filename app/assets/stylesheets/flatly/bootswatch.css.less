@@ -157,10 +157,10 @@ img {
   
 
 
-  background: -webkit-linear-gradient(left, #F2F6F6, #F2F6F6 ); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(right, #F2F6F6, #F2F6F6); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(right, #F2F6F6, #F2F6F6); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to right, #F2F6F6, #F2F6F6); /* Standard syntax */
+  background: -webkit-linear-gradient(left, @gray-lighter, @gray-lighter ); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, @gray-lighter, @gray-lighter); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, @gray-lighter, @gray-lighter); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, @gray-lighter, @gray-lighter); /* Standard syntax */
 
 }
 
@@ -192,18 +192,7 @@ img {
   height: auto !important; 
 }
 
-.header {
-  .jumbotron {
-  margin: auto;
-  width: 550px;
-  padding-bottom: 10px;
-  padding-top: 10px;
-  }
-}
 
-.forms {
-  padding-top: 50px;
-}
 
 .links {
   padding-top: 5px;
@@ -224,6 +213,19 @@ img {
   .box-shadow(none);
 }
 
+//Patient show page =======================================================
+
+.patient-metrics {
+  h4 {display: inline;}
+  margin-left: 10%;
+  margin-top: 30px;
+  .graph-btns {
+    margin-left: 25%;
+  }
+  .demo-container {
+    margin-top: 15px;
+  }
+}
 // Typography =================================================================
 
 .text-primary,
@@ -253,13 +255,13 @@ img {
 
 // Tables =====================================================================
 .table-header {
-  padding-left: 300px;
+  padding-left: 360px;
 }
 table,
 .table {
   
   padding-top: 30px;
-  width: 80%;
+  width: 85%;
 
 
   .success,
@@ -295,7 +297,32 @@ table,
 
 // Forms ======================================================================
 
-form {
+  .devise {
+   
+      padding-top: 15px;
+      margin-top: 50px;
+      width: 55%;
+      margin-left: auto;
+      margin-right: auto;
+
+    }
+
+.devise-edit {
+  
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-top: 50px;
+  width: 60%;
+  margin-left: 8%;
+  margin-right: auto;
+
+  .btn{
+    margin-bottom: 20px;
+  }
+  
+}
+
+.p-and-cg {
 
   .jumbotron {
   padding-top: 15px;
