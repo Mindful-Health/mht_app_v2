@@ -1,6 +1,11 @@
-<h1>Editing care_group</h1>
+<% provide(:title, 'Edit Care Group') %>
 
-<%= render 'form' %>
+<div class="container">
+	<div class="row">
+		<%= render 'form' %>
+		<div class="links"><%= link_to 'Show', @care_group %> | <%= link_to 'Back', care_groups_path %></div>
+	</div>
+</div> 
 
-<%= link_to 'Show', @care_group %> |
-<%= link_to 'Back', care_groups_path %>
+
+

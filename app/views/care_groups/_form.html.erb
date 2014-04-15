@@ -1,3 +1,4 @@
+<div class="container">
 <%= form_for(@care_group) do |f| %>
   <% if @care_group.errors.any? %>
     <div id="error_explanation">
@@ -10,12 +11,12 @@
       </ul>
     </div>
   <% end %>
-<div class="container">
+
   
-  <form class="form-horizontal" role="form">
-    <div class="jumbotron">
+  <form class="form-horizontal " role="form">
+    <div class="jumbotron p-and-cg">
     <fieldset>
-      <legend class="text-center"> New Care Group</legend> 
+      <legend class="text-center"> <%= yield (:title)%></legend> 
       <div class="form-group">
         <%= f.label :name, :class => 'col-lg-2 control-label' %>
         <div class="col-lg-10">

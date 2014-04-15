@@ -1,3 +1,4 @@
+<% provide(:title, 'Manage' + " " + @care_group.name + " " + 'Care group members' )%>
 <h1>Manage Care Group Members</h1>
 <table>
   <thead>
@@ -11,7 +12,7 @@
 
   <tbody>
 
-  <% Patient.all.find_each do |patient| %>
+  <% @patient.all.find_each do |patient| %>
       <tr>
         <td><%= patient.name %></td>
       </tr>
