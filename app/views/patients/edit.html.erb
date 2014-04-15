@@ -1,12 +1,8 @@
+<% provide(:title, 'Edit:' + " " + @patient.name) %>
 <div class="container">
-	<form class="form-horizontal p-and-cg" role="form">
-	    <div class="jumbotron">
-	    <fieldset>
-	      <legend class="text-center"> Edit <%=@patient.name%> </legend> 
-		  <%= render 'form' %>
-		</fieldset>
-	    </div>
-	</form>
+
+	<%= render 'form' %>
+
 	<div class="links"><%= link_to 'Show', @patient %> | <%= link_to 'Back', patients_path %></div>
 </div>
 

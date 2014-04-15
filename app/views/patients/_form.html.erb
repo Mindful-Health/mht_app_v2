@@ -1,3 +1,4 @@
+<div class="container">
 <%= form_for(@patient) do |f| %>
   <% if @patient.errors.any? %>
     <div id="error_explanation">
@@ -10,7 +11,11 @@
     </div>
   <% end %>
   
- 
+  <form class="form-horizontal" role="form">
+      <div class="jumbotron p-and-cg">
+      <fieldset>
+        <legend class="text-center">  <%= yield (:title)%> </legend> 
+
       <div class="form-group">
         <%= f.label :name, :class => 'col-lg-2 control-label' %>
         <div class="col-lg-10">
@@ -47,6 +52,10 @@
           <%= f.submit "Submit", :class => 'btn btn-small btn-primary' %>
         </div>
       </div>
+    </fieldset>
+    </div>
+  </form>
 
 <% end %>
+</div>
 
