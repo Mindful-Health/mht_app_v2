@@ -105,10 +105,12 @@ img {
 }
 
 #page-content-wrapper {
-  width: 100%;
-  margin-left: 17%;
+  width: 95%;
+  margin-left: 18%;
+  
   z-index: -1;
   overflow-x: hidden;
+
   
 
   .page-content {
@@ -293,10 +295,22 @@ table,
 
 // Forms ======================================================================
 
+form {
+
+  .jumbotron {
+  padding-top: 15px;
+  margin-top: 50px;
+  width: 70%;
+  margin-left: 8%;
+  margin-right: auto;
+  }
+}
 .form-control,
 input, {
   border-width: 2px;
   .box-shadow(none);
+  margin-bottom: 6px;
+
 
   &:focus {
     .box-shadow(none);
@@ -409,8 +423,10 @@ input, {
 .fixed {
   position: fixed;
 }
-// Footer
+// Footer ====================================================
 
 .footer {
   padding-bottom: 30px;
+  text-align: right;
+  
 }

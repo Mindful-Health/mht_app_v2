@@ -1,28 +1,26 @@
-<h1>Listing care_groups</h1>
+<div class="container">
+  <h1 class="header table-header" >Listing care groups</h1>
+  <div class="row">
+   
+      <table class="table table-responsive text-hover">
+        <thead>
+          <tr class="danger">
+            <th>Name</th>
+            <th>Actions</th>
+          </tr>
+          </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @care_groups.each do |care_group| %>
-      <tr>
-        <td><%= care_group.name %></td>
-        <td><%= link_to 'Show', care_group %></td>
-        <td><%= link_to 'Edit', edit_care_group_path(care_group) %></td>
-        <td><%= link_to 'Manage Members', manage_care_group_path(care_group) %></td>
-        <td><%= link_to 'Destroy', care_group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Care group', new_care_group_path %>
+        <tbody>
+          <% @care_groups.each do |care_group| %>
+            <tr>
+              <td><%= care_group.name %></td>
+              <td><a><%= link_to 'Show', care_group %> | <%= link_to 'Edit', edit_care_group_path(care_group) %> | <%= link_to 'Manage Members', manage_care_group_path(care_group) %> | <%= link_to 'Destroy', care_group, method: :delete, data: { confirm: 'Are you sure?' } %></a></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div class="row">
+      <%= link_to 'New Care group', new_care_group_path %>
+    </div>
+</div>

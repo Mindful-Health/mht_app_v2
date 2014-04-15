@@ -1,8 +1,7 @@
 <div class="container">
   <h1 class="header table-header" >Listing patients</h1>
   <div class="row">
-    <div class="col-lg-12">
-      <table class="table table-responsive text-hover" id="patients">
+      <table class="table table-responsive text-hover">
         <thead>
           <tr class="info">
             <th>Name</th>
@@ -29,11 +28,12 @@
       </tbody>
     </table>
   </div>
-</div>
 
-<div class="row">
-  <%= link_to 'New Patient', new_patient_path %>
-</div>
+
+  <div class="row">
+   <%= link_to 'New Patient', new_patient_path %>
+  </div>
+
 
 </div>
 
