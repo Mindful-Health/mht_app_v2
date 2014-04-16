@@ -68,7 +68,7 @@ class PatientsController < ApplicationController
       @data = PatientData.where(:patient_id => params[:patient_id]).order(transmission_time: :asc).limit(96)
 
       if(@mode == "1 week")
-        @data = PatientData.where(:patient_id => params[:patient_id]).order(transmission_time: :asc).limit(2520)
+        @data = PatientData.where(:patient_id => params[:patient_id]).order(transmission_time: :asc).limit(672)
       end
       
       respond_to do |format|

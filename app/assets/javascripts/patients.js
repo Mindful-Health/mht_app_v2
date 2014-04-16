@@ -1,48 +1,137 @@
 var ready;
-
 ready = function() {
+
+var x_auto = [];
+var y_auto_spo2 = [];
+var y_auto_heart = [];
+var auto_counter = 0;
+
+
+
+  // Set the Xively API key (https://xively.com/users/YOUR_USERNAME/keys)
+  //var key = "JhxKaGOzgOozj0LqDVReCJWyPU8Vg3xEgK9aDYRt3YJyKc9n"; //API key
+  //xively.setKey("B6mEkGwf5YFgyZ9GJXOUWzFE2Yx4fewxOuZxPSJmRgyC7szH");
+  xively.setKey("JhxKaGOzgOozj0LqDVReCJWyPU8Vg3xEgK9aDYRt3YJyKc9n"); 
+  
+  // Replace with your own values  
+  //var feedID        = 705754061;          // Feed ID  
+  var feedID        = 909656253;
+  var datastreamID  = "LivePulse";       // Datastream ID  
+  var selector      = "#myelement";   // Your element on the page  
+  var refreshIntervalId;
 
   var poll;
 
-  $.ajax({
-    type: "POST",
-    dataType: "json",
-    data: {
-      patient_id: 1
-    },
-    url: "http://localhost:3000/patients/data",
+  // $.ajax({
+  //   type: "POST",
+  //   dataType: "json",
+  //   data: {
+  //     patient_id: 1
+  //   },
+  //   url: "http://localhost:3000/patients/data",
 
-    success: function(data) {
-      load_data(data);
-    }
-  });
+  //   success: function(data) {
+  //     load_data(data);
+  //   }
+  // });
 
 
   $("#btnAutoRefresh").click(function() {
-    return setInterval((function() {
+    refreshIntervalId = setInterval((function() {
       poll();
-    }), 60000);
+    }), 1000);
   });
   
 
   poll = function() {
     
-    $.ajax({
-      type: "POST",
-      dataType: "json",
-      data: {
-        patient_id: 1
-      },
-      url: "http://localhost:3000/patients/data",
+    // Get datastream data from Xively  
+  xively.datastream.get (feedID, "LivePulse", function ( datastream ) {  
     
-      success: function(data) {
-        load_data(data);
+    console.log(datastream["current_value"]);
+    console.log(Date.parse(datastream["at"]));
+
+    x_auto[auto_counter] = Date.parse(datastream["at"]);
+    y_auto_spo2[auto_counter] = datastream["current_value"];
+
+
+  });
+
+    xively.datastream.get (feedID, "LiveSpO2", function ( datastream ) {  
+    
+    console.log(datastream["current_value"]);
+
+
+    y_auto_heart[auto_counter] = datastream["current_value"];
+
+  });
+
+    auto_counter++;
+    // $.ajax({
+    //   type: "POST",
+    //   dataType: "json",
+    //   data: {
+    //     patient_id: 1
+    //   },
+    //   url: "http://localhost:3000/patients/data",
+    
+    //   success: function(data) {
+    //     console.log(data);
+    //     load_data(data);
+    //   }
+    // });
+
+
+
+
+
+      flot_data1 = [x_auto.length];
+      flot_data2 = [x_auto.length];
+      i = 0;
+      while (i < x_auto.length) {
+        flot_data1[i] = [];
+        flot_data1[i][0] = parseFloat(x_auto[i]);
+        flot_data1[i][1] = y_auto_spo2[i];
+
+        flot_data2[i] = [];
+        flot_data2[i][0] = parseFloat(x_auto[i]);
+        flot_data2[i][1] = y_auto_heart[i];
+
+        i++;
       }
-    });
+      console.log(flot_data1);
+      console.log(flot_data2);
+      data = [{data:flot_data1, lines:{show:true}}, {data:flot_data2, lines:{show:true}}];
+      ticks = [];
+      i = 0;
+      
+      
+      plot = $.plot($("#placeholder"), data, {
+        xaxis: {
+          mode: "time"
+        },
+        series: {
+          lines: {
+            show: true
+          },
+          points: {
+            show: false
+          }
+        },
+        grid: {
+          hoverable: false,
+          clickable: false
+        }
+      });
+
+
+
   };
 
 
 $("#24hr_data").click(function() {
+
+clearInterval(refreshIntervalId);
 
 $.ajax({
   type: "POST",
@@ -58,6 +147,8 @@ $.ajax({
 
 $("#1wk_data").click(function() {
 
+clearInterval(refreshIntervalId);
+
   $.ajax({
     type: "POST",
     dataType: "json",
@@ -68,20 +159,19 @@ $("#1wk_data").click(function() {
   
     success: function(data) {
   
+      console.log(data);
+
+
       load_data(data);
     }
   });
 });
 
-};
 
-$(document).ready(ready);
-$(document).on('page:load', ready);
 
 load_data = function (data) {
   var flot_data, i, plot, ticks, x, y;
       
-      console.log(data);
       
       x = [];
       y_spo2 = [];
@@ -115,10 +205,6 @@ load_data = function (data) {
       ticks = [];
       i = 0;
       
-      console.log(data);
-        // data = [{ data:data1, label:"fixed", lines:{show:true}}
-        // ,{ data:data2, label:"linear", lines:{show:true}, points:{show:true}}
-        // ,{ data:data3, label:"random", bars:{ show:true, barWidth:0.5}}];
       
       plot = $.plot($("#placeholder"), data, {
         xaxis: {
@@ -137,5 +223,12 @@ load_data = function (data) {
           clickable: false
         }
       });
+
 };
 
+
+
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);
