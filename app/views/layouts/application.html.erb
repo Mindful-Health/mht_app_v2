@@ -17,14 +17,16 @@
 		<%= render 'layouts/sidebar' unless @disable_sidebar %>
 			<div class="container" id = "page-content-wrapper"> 
 				<div class="page-content inset">
-
-
-				<% end %>
-				<%= yield %>
-				
-
+	
+						<%= yield %>
 				</div>
 	    	</div>
+	<%else %>
+		<div class="container">
+			<%= yield %>
+		</div>
+	<% end %>
+	
    <%= render 'layouts/footer' %>   	
 </body>
 </html>
