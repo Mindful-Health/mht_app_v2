@@ -21,11 +21,11 @@ gem 'bootswatch-rails'
 gem 'devise'
 gem "flot-rails", "~> 0.0.4"
 
-gem 'twitter-bootswatch-rails', '~> 3.1.1'
+gem 'twitter-bootswatch-rails'
 gem 'twitter-bootswatch-rails-helpers'
 gem 'twitter-bootswatch-rails-fontawesome'
 gem 'therubyracer'
-gem 'less-rails', '2.3.3'
+gem 'less-rails'
 
 
 #gemfiles for GSM network process
