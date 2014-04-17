@@ -101,8 +101,8 @@ var auto_counter = 0;
       }
       console.log(flot_data1);
       console.log(flot_data2);
-      data = [{label: 'spo2', data: flot_data1},
-              {label: 'Pulse Rate', data: flot_data2}];
+      data = [{label: 'HR', data: flot_data1},
+              {label: 'SpO2', data: flot_data2}];
 
       
       
@@ -207,8 +207,8 @@ load_data = function (data) {
         i++;
       }
 
-      data = [{label: 'spo2', data: flot_data1},
-              {label: 'Pulse Rate', data: flot_data2}];
+      data = [{label: 'HR', data: flot_data1},
+              {label: 'SpO2', data: flot_data2}];
 
 
       
