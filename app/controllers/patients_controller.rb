@@ -1,10 +1,18 @@
 class PatientsController < ApplicationController
+  before_filter :disable_sidebar, only: [:index]
   before_action :set_patient, only: [:show, :edit, :update, :destroy]
-
+  layout 'application', :except => [:index]
   # GET /patients
   # GET /patients.json
+  def disable_sidebar 
+    @disable_sidebar = true
+  end
+  
   def index
     @patients = Patient.all
+    @search = Patient.search(params[:q])
+    @patients = @search.result
+    
   end
 
   # GET /patients/1

@@ -27,7 +27,7 @@ body {
   font-size: 1.7em;
   text-transform: uppercase;
   letter-spacing: -1px;
-  padding-top: 9px;
+  padding-top: 10px;
   font-weight: bold;
   line-height: 1;
   margin-left: 5%;
@@ -61,10 +61,19 @@ body {
 /* header */
 
 #mh {
+  margin-top: 22%;
   padding-top: 30px;
   padding-right: 20px;
   text-align: right;
-  color: black;
+  font-weight: bold;
+  color: white;
+  h1 {
+    font-size: 1.8em;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    font-weight: bold;
+    line-height: 1;
+    }
   
 }
 // Body content various pages =====================================================
@@ -117,6 +126,15 @@ img {
     postion: fixed;
     width: 83%;
   }
+}
+
+.index-patient-page {
+
+ margin-left: 7%;
+ width: 100%
+
+
+
 }
 
 
@@ -254,14 +272,17 @@ img {
 }
 
 // Tables =====================================================================
-.table-header {
-  padding-left: 360px;
+.sidebar-adjust {
+  h1 {
+      padding-left: 360px;
+      }
+  table,
+  .table {  width: 85%; }
 }
 table,
 .table {
   
   padding-top: 30px;
-  width: 85%;
 
 
   .success,
@@ -296,7 +317,18 @@ table,
 }
 
 // Forms ======================================================================
-
+.form-inline {
+  margin-bottom: 10px;
+  margin-top: 20px;
+  .btn {
+    margin-top: 0;
+    margin-left: 10px;
+    margin-bottom: 7px;
+  }
+  .control-label {
+    padding-right: 5px;
+  }
+}
   .devise {
    
       padding-top: 15px;

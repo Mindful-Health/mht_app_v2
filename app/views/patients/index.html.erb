@@ -1,14 +1,25 @@
-<div class="container">
-  <h1 class="header table-header" >Listing patients</h1>
+
+<div class="container index-patient-page">
+  <h1 class="header table-header text-center" >Listing patients</h1>
+  
+  <%= search_form_for @search, :class => 'form-inline' do |f| %>
+    <div class = "form-group" >
+      <%=f.label :name_cont, "Name contains:", :class => 'control-label' %>
+      <%= f.text_field :name_cont, :class => 'input form-control' %>
+    </div>
+    <div class="form-group"><%= f.submit "Search", :class => 'btn btn-small btn-success'%></div>
+  <%end%>
+
+
   <div class="row">
       <table class="table table-responsive text-hover">
         <thead>
           <tr class="info">
-            <th>Name</th>
-            <th>Email</th>
-            <th>Phone</th>
+            <th><%= sort_link(@search, :name, "Name") %></th>
+            <th><%= sort_link(@search, :email, "Email") %></th>
+            <th><%= sort_link(@search, :phone, "Phone Number") %></th>
             <th>Condition</th>
-            <th>Device ID</th>
+            <th><%= sort_link(@search, :deviceId, "Device ID") %></th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -27,12 +38,16 @@
         <% end %>
       </tbody>
     </table>
+
+    <div class = "row">
+      <%= link_to 'Back to Search', patients_path %>
+    </div>
+        <div class="row">
+     <%= link_to 'New Patient', new_patient_path %>
+    </div>
+
   </div>
 
-
-  <div class="row">
-   <%= link_to 'New Patient', new_patient_path %>
-  </div>
 
 
 </div>

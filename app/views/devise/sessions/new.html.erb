@@ -1,6 +1,6 @@
-
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :class => 'form-horizontal') do |f| %>
 <div class="container">
-	<form class="form-horizontal " role="form">
+	
 		<div class="jumbotron devise">
     	<fieldset>
       	<legend class="text-center"> Sign In </legend>  
@@ -30,8 +30,6 @@
 		</fieldset>
 
 		</div>
-		
-
-		
 	</form>
 </div>
+<% end %>

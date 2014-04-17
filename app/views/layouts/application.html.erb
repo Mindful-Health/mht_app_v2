@@ -11,11 +11,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<%= render 'layouts/header' %>  
+	<%= render 'layouts/header'  %>  
 
 	<% if user_signed_in? %>
-		<%= render 'layouts/sidebar'%>
-			<div class="container" id ="page-content-wrapper">
+		<%= render 'layouts/sidebar' unless @disable_sidebar %>
+			<div class="container" id = "page-content-wrapper"> 
 				<div class="page-content inset">
 
 
