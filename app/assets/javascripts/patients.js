@@ -101,9 +101,9 @@ var auto_counter = 0;
       }
       console.log(flot_data1);
       console.log(flot_data2);
-      data = [{data:flot_data1, lines:{show:true}}, {data:flot_data2, lines:{show:true}}];
-      ticks = [];
-      i = 0;
+      data = [{label: 'spo2', data: flot_data1},
+              {label: 'Pulse Rate', data: flot_data2}];
+
       
       
       plot = $.plot($("#placeholder"), data, {
@@ -121,6 +121,12 @@ var auto_counter = 0;
         grid: {
           hoverable: false,
           clickable: false
+        },
+        legend: {
+          show: true,
+          position: "ne",
+          noColumns: 2,
+          container: $("#graph_legend")
         }
       });
 
@@ -201,9 +207,10 @@ load_data = function (data) {
         i++;
       }
 
-      data = [{data:flot_data1, lines:{show:true}}, {data:flot_data2, lines:{show:true}}];
-      ticks = [];
-      i = 0;
+      data = [{label: 'spo2', data: flot_data1},
+              {label: 'Pulse Rate', data: flot_data2}];
+
+
       
       
       plot = $.plot($("#placeholder"), data, {
@@ -221,7 +228,14 @@ load_data = function (data) {
         grid: {
           hoverable: false,
           clickable: false
+        },
+        legend: {
+          show: true,
+          position: "ne",
+          noColumns: 2,
+          container: $("#graph_legend")
         }
+        
       });
 
 };
