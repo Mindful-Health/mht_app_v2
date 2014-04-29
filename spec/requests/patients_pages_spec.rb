@@ -27,7 +27,13 @@ describe "Patient Pages" do
 
 	describe "show" do
 		let(:patient) {FactoryGirl.create(:patient)}
-		before {visit patient_path(patient)}
+		it {should have_button ('24 Hours')}
+		before do
+			visit patient_path(patient)
+			click_button "24 Hours"
+		end
+
+		it {should have_selector('#placeholder')}
 
 	end
 
