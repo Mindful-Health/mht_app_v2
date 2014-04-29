@@ -59,8 +59,7 @@ describe PatientsController do
     end
     it "renders attributes in <p>" do
       @request.env["devise.mapping"] = Devise.mappings[:patient]
-      @patient = Patient.find(params[:id])
-      get :show, {:id => @patient.to_param}, valid_session
+      get :show, {:id => patient.to_param}, valid_session
         # Run the generator again with the --webrat flag if you want to use webrat matchers
         rendered.should match(/Name/)
         rendered.should match(/Email/)
