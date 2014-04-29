@@ -8,15 +8,30 @@
 # gem install pg
 # Choose the win32 build.
 # Install PostgreSQL and put its /bin directory on your path.
+# development:
+#   adapter: postgresql
+#   encoding: unicode
+#   pool: 5
+#   database: dsum2kpouveg8
+#   username: wfnervozidxqdy
+#   password: P5WFq9FDgg9pE4m9uzpLyFJv0D
+#   host: ec2-54-225-101-64.compute-1.amazonaws.com
+#   port: 5432
+
 development:
-  adapter: postgresql
-  encoding: unicode
+  adapter: sqlite3
+  database: db/development.sqlite3
   pool: 5
-  database: dsum2kpouveg8
-  username: wfnervozidxqdy
-  password: P5WFq9FDgg9pE4m9uzpLyFJv0D
-  host: ec2-54-225-101-64.compute-1.amazonaws.com
-  port: 5432
+  timeout: 5000
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test: &test
+  adapter: sqlite3
+  database: db/test.sqlite3
+  pool: 5
+  timeout: 5000
 
 # Connect on a TCP socket. Omitted by default since the client uses a
 # domain socket that doesn't need configuration. Windows does not have
@@ -36,15 +51,15 @@ development:
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
-test:
-  adapter: postgresql
-  encoding: unicode
-  pool: 5
-  database: dcbh0agjntnlce
-  username: mpccgjgkcubcub
-  password: 8OOD__h8yelnNME5F8T52Y1EJY
-  host: ec2-54-225-101-199.compute-1.amazonaws.com
-  port: 5432
+# test: &test
+#   adapter: postgresql
+#   encoding: unicode
+#   pool: 5
+#   database: dcbh0agjntnlce
+#   username: mpccgjgkcubcub
+#   password: 8OOD__h8yelnNME5F8T52Y1EJY
+#   host: ec2-54-225-101-199.compute-1.amazonaws.com
+#   port: 5432
 
 production:
   adapter: postgresql
@@ -55,3 +70,5 @@ production:
   password: 8OOD__h8yelnNME5F8T52Y1EJY
   host: ec2-54-225-101-199.compute-1.amazonaws.com
   port: 5432
+cucumber:
+  <<: *test
