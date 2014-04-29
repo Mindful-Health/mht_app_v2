@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe "patients/show" do
+
+  
   before(:each) do
     @patient = assign(:patient, stub_model(Patient,
       :name => "Name",
@@ -20,4 +22,13 @@ describe "patients/show" do
     rendered.should match(/MyText/)
     rendered.should match(/1/)
   end
+ 
+ #it "should have a graph" do
+  #  visit 'patients/1'
+  #  expect(page).to have_content('HR')
+    #it {should have_content'HR'}
+
+ # end
+
+
 end
