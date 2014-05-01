@@ -1,5 +1,3 @@
-
-
 var ready;
 ready = function() {
 
@@ -146,7 +144,7 @@ $.ajax({
   dataType: "json",
   data: {patient_id: 1, 
          mode: "24 hours"},
-  url: "http://stormy-brushlands-4215.herokuapp.com/patients/data",
+  url: "http://localhost:3000/patients/data",
   success: function(data) {
     load_data(data);
   }
@@ -163,7 +161,7 @@ clearInterval(refreshIntervalId);
     data: {
     patient_id: 1,
     mode: "1 week"},
-    url: "http://stormy-brushlands-4215.herokuapp.com/patients/data",
+    url: "http://localhost:3000/patients/data",
   
     success: function(data) {
   
