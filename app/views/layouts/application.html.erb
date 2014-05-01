@@ -15,18 +15,18 @@
 
 	<% if user_signed_in? %>
 		<%= render 'layouts/sidebar' unless @disable_sidebar %>
-			<div class="container" id = "page-content-wrapper"> 
-				<div class="page-content inset">
+			<div class="container page-content-wrapper"> 
+				
 	
 						<%= yield %>
-				</div>
+						 
+					
 	    	</div>
-	<%else %>
-		<div class="container">
-			<%= yield %>
-		</div>
+		
+	<% else %>
+		<%=yield %>
+		
 	<% end %>
-	
-   <%= render 'layouts/footer' %>   	
+     	
 </body>
 </html>

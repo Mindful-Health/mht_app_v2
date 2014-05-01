@@ -7,6 +7,10 @@ class PatientsController < ApplicationController
   def disable_sidebar 
     @disable_sidebar = true
   end
+  def search
+    index
+    render :index
+  end
   
   def index
     @patients = Patient.all
@@ -18,7 +22,7 @@ class PatientsController < ApplicationController
   # GET /patients/1
   # GET /patients/1.json
   def show
-    #@patient = Patient.find(:patient_id =>params[:id])
+    @patient = Patient.find(params[:id])
   end
 
   # GET /patients/new

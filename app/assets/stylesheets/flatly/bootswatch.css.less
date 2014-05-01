@@ -10,6 +10,12 @@
 
 body { 
   padding-top: 30px;
+  padding-bottom: 20px;
+    .signed-in-footer {
+    bottom: 0;
+    padding-left: 100px;
+    padding-bottom: 30px;
+  }
   
 }
 
@@ -106,47 +112,6 @@ img {
 .team {
   padding-top: 50px;
 }
-// Dashboard page ==============
-
-#row-top {
-  padding-top: 30px;
-  
-}
-
-#page-content-wrapper {
-  width: 95%;
-  margin-left: 18%;
-  
-  z-index: -1;
-  overflow-x: hidden;
-
-  .page-content {
-    postion: fixed;
-    width: 83%;
-  }
-}
-
-
-.dbjumbo {
-  padding-top: 10px;
-
-  margin-bottom:30px;
-  margin-right: 10px;
-  
-  height: 250px;
-}
-
-.welldb {
-  margin-top: 30px;
-  height: 90px;
-
-  .btn {
-    margin-top: 20px;
-  }
-}
-
-
-
 //sidebar=========================================================
 
 #sidebar-wrapper {
@@ -188,6 +153,46 @@ img {
     }
 
 }
+
+// Dashboard page ==============
+
+#row-top {
+  padding-top: 30px;
+  
+}
+
+.page-content-wrapper {
+  
+  margin-left: 18%;
+  z-index: -1;
+  position: absolute;
+  width: 78%;
+  padding-right: 5px;
+  padding-bottom: 20px;
+
+
+}
+
+
+
+.dbjumbo {
+  padding-top: 10px;
+
+  margin-bottom:30px;
+  margin-right: 10px;
+  
+  height: 250px;
+}
+
+.welldb {
+  margin-top: 30px;
+  height: 90px;
+
+  .btn {
+    margin-top: 20px;
+  }
+}
+
 
 
 
@@ -262,11 +267,16 @@ img {
 
 // Tables =====================================================================
 .sidebar-adjust {
+  
+  margin-left: 9%;
+
   h1 {
-      padding-left: 360px;
+      margin-left: 30%;
+
       }
-  table,
-  .table {  width: 85%; }
+  #patient_table
+  {  right: 0;
+       }
 }
 table,
 .table {
@@ -482,9 +492,10 @@ input, {
 // Footer ====================================================
 
 .footer {
-  padding-bottom: 30px;
-  text-align: right;
+  padding-bottom: 40px;
+  bottom: 0;
   
 }
+
 
 #chartLegend .legendLabel { padding-right:10px; }

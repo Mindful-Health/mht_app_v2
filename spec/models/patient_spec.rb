@@ -1,5 +1,6 @@
 require 'spec_helper'
 
 describe Patient do
-  pending "add some examples to (or delete) #{__FILE__}"
+  	@patient = Patient.new
+  
 end

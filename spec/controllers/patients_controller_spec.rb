@@ -19,7 +19,7 @@ require 'spec_helper'
 # that an instance is receiving a specific message.
 
 describe PatientsController do
-
+  render_views
   # This should return the minimal set of attributes required to create a valid
   # Patient. As you add validations to Patient, be sure to
   # adjust the attributes here as well.
@@ -31,6 +31,19 @@ describe PatientsController do
   let(:valid_session) { {} }
 
   describe "GET index" do
+
+    it "renders a list of patients" do
+      @request.env["devise.mapping"] = Devise.mappings[:patient]
+        get :index, {}, valid_session
+        # Run the generator again with the --webrat flag if you want to use webrat matchers
+        page.has_selector?('tr>td', :text => "Name" )
+        page.has_selector?("tr>td", :text => "Email")
+        page.has_selector?("tr>td", :text => "Phone")
+        page.has_selector?("tr>td", :text => "MyText")
+        page.has_selector?("tr>td", :text => 1)
+
+    end #end render list
+
     it "assigns all patients as @patients" do
       patient = Patient.create! valid_attributes
       get :index, {}, valid_session
@@ -44,9 +57,33 @@ describe PatientsController do
       get :show, {:id => patient.to_param}, valid_session
       assigns(:patient).should eq(patient)
     end
+  #  it "renders attributes in <p>" do
+  #    @request.env["devise.mapping"] = Devise.mappings[:patient]
+  #    get :show, {:id => patient.to_param}, valid_session
+        # Run the generator again with the --webrat flag if you want to use webrat matchers
+  #      rendered.should match(/Name/)
+  #      rendered.should match(/Email/)
+  #      rendered.should match(/Phone/)
+  #      rendered.should match(/MyText/)
+  #      rendered.should match(/1/)
+   # end
+
   end
 
   describe "GET new" do
+
+    it "renders new patient form" do
+      get :new, {}, valid_session
+      @request.env["devise.mapping"] = Devise.mappings[:patient]
+        # Run the generator again with the --webrat flag if you want to use webrat matchers
+        assert_select "form[action=?][method=?]", patients_path, "post" do
+          assert_select "input#patient_name[name=?]", "patient[name]"
+          assert_select "input#patient_email[name=?]", "patient[email]"
+          assert_select "input#patient_phone[name=?]", "patient[phone]"
+          assert_select "textarea#patient_condition[name=?]", "patient[condition]"
+          assert_select "input#patient_deviceId[name=?]", "patient[deviceId]"
+        end
+    end #end render form
     it "assigns a new patient as @patient" do
       get :new, {}, valid_session
       assigns(:patient).should be_a_new(Patient)
@@ -54,6 +91,18 @@ describe PatientsController do
   end
 
   describe "GET edit" do
+    it "renders the edit patient form" do
+      @request.env["devise.mapping"] = Devise.mappings[:patient]
+      get :edit, {:id => patient.to_param}, valid_session
+    # Run the generator again with the --webrat flag if you want to use webrat matchers
+        assert_select "form[action=?][method=?]", patient_path(@patient), "post" do
+          assert_select "input#patient_name[name=?]", "patient[name]"
+          assert_select "input#patient_email[name=?]", "patient[email]"
+          assert_select "input#patient_phone[name=?]", "patient[phone]"
+          assert_select "textarea#patient_condition[name=?]", "patient[condition]"
+          assert_select "input#patient_deviceId[name=?]", "patient[deviceId]"
+        end #end assert_select
+    end #end patient form
     it "assigns the requested patient as @patient" do
       patient = Patient.create! valid_attributes
       get :edit, {:id => patient.to_param}, valid_session
