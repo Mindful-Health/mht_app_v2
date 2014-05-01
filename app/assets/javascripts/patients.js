@@ -90,11 +90,11 @@ var auto_counter = 0;
       i = 0;
       while (i < x_auto.length) {
         flot_data1[i] = [];
-        flot_data1[i][0] = parseFloat(x_auto[i]);
+        flot_data1[i][0] = parseFloat(x_auto[i])-18000000;
         flot_data1[i][1] = y_auto_spo2[i];
 
         flot_data2[i] = [];
-        flot_data2[i][0] = parseFloat(x_auto[i]);
+        flot_data2[i][0] = parseFloat(x_auto[i])-18000000;
         flot_data2[i][1] = y_auto_heart[i];
 
         i++;
@@ -144,7 +144,7 @@ $.ajax({
   dataType: "json",
   data: {patient_id: 1, 
          mode: "24 hours"},
-  url: "http://localhost:3000/patients/data",
+  url: "http://stormy-brushlands-4215.herokuapp.com/patients/data",
   success: function(data) {
     load_data(data);
   }
@@ -161,7 +161,7 @@ clearInterval(refreshIntervalId);
     data: {
     patient_id: 1,
     mode: "1 week"},
-    url: "http://localhost:3000/patients/data",
+    url: "http://stormy-brushlands-4215.herokuapp.com/patients/data",
   
     success: function(data) {
   
