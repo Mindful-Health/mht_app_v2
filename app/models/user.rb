@@ -2,10 +2,16 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :confirmable, :lockable
 
   has_one :care_group
   has_many :patients, through: :care_group
+  
+  before_save { self.email = email.downcase }
+  before_save { email.downcase! }
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(?:\.[a-z\d\-]+)*\.[a-z]+\z/i
+  validates :email, presence: true, format: { with: VALID_EMAIL_REGEX },
+                    uniqueness: { case_sensitive: false }
 
   def login=(login)
   	@login = login
@@ -23,4 +29,12 @@ class User < ActiveRecord::Base
       where(conditions).first
     end
   end
+
+  #def password_match?
+  #  self.errors[:password] << "can't be blank" if password.blank?
+  #  self.errors[:password_confirmation] << "can't be blank" if password_confirmation.blank?
+  #  self.errors[:password_confirmation] << "does not match password" if password != password_confirmation
+  #  password == password_confirmation && !password.blank?
+  #end
+
 end

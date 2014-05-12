@@ -8,6 +8,7 @@ resources :care_groups do
 resources :patients do
   collection do 
     post 'data'
+    match 'search' => 'patients#search', via: [:get, :post], as: :search
   end 
 end
 

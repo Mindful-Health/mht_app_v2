@@ -14,3 +14,7 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Ignore Procfile so Heroku doesn't receive R11- Bad Bind # Error
+.env
+Procfile
