@@ -34,11 +34,7 @@ gem 'unicorn'
 group :development, :test do
   gem 'sqlite3', '1.3.8'
   gem 'rspec-rails', '2.14.0'
-<<<<<<< HEAD
-
-=======
   gem 'foreman'
->>>>>>> c1a7244a2551b1b9639553b795efbce6ae6e9f2b
 end
 
 group :test do
@@ -50,8 +46,6 @@ group :test do
   gem 'email_spec'
   gem 'cucumber-rails', :require => false
 end
-
-
 
 gem 'turbolinks', '1.1.1'
 gem 'jbuilder', '1.0.2'

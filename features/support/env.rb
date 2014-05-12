@@ -5,8 +5,15 @@
 # files.
 
 require 'cucumber/rails'
-require ‘cucumber/rails/world’
+#require ‘cucumber/rails/world’
 require 'email_spec/cucumber'
+
+Around('@email') do |scenario, block|
+  ActionMailer::Base.delivery_method = :test
+  ActionMailer::Base.perform_deliveries = true
+  ActionMailer::Base.deliveries.clear
+  block.call
+end
 
 # Capybara defaults to CSS3 selectors rather than XPath.
 # If you'd prefer to use XPath, just uncomment this line and adjust any
