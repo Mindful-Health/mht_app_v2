@@ -8,8 +8,6 @@ gem 'uglifier', '2.1.1'
 gem 'jquery-rails', '3.0.4'
 gem 'ransack'
 
-
-
 gem 'rails', '4.0.2'
 gem 'pg', '0.15.1'
 gem 'bootstrap-sass', '3.1.1.0'
@@ -27,7 +25,6 @@ gem 'twitter-bootswatch-rails-fontawesome'
 gem 'therubyracer'
 gem 'less-rails'
 
-
 #gemfiles for GSM network process
 gem 'clockwork'
 gem 'xively-rb', '~> 0.2.10'
@@ -37,12 +34,17 @@ gem 'unicorn'
 group :development, :test do
   #gem 'sqlite3', '1.3.8'
   gem 'rspec-rails', '2.14.0'
+
 end
 
 group :test do
   gem 'selenium-webdriver', '2.35.1'
   gem 'capybara', '2.2.0'
   gem 'factory_girl_rails', '4.2.1'
+  # database_cleaner is not required, but highly recommended
+  gem 'database_cleaner'
+  gem 'email_spec'
+  gem 'cucumber-rails', :require => false
 end
 
 
