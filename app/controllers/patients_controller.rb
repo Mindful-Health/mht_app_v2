@@ -55,8 +55,12 @@ class PatientsController < ApplicationController
   def update
     respond_to do |format|
       if @patient.update(patient_params)
+
         format.html { redirect_to @patient, notice: 'Patient was successfully updated.' }
         format.json { head :no_content }
+        #if @patient.update(threshold) =< @data 
+
+
       else
         format.html { render action: 'edit' }
         format.json { render json: @patient.errors, status: :unprocessable_entity }
