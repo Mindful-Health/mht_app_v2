@@ -43,6 +43,7 @@ body {
 .navbar {
   border-width: 0;
 
+
   &-default {
 
     .badge {
@@ -169,6 +170,17 @@ img {
   width: 78%;
   padding-right: 5px;
   padding-bottom: 20px;
+
+
+}
+
+.error-messages-wrapper {
+  
+  width: 55%;
+  margin-left: auto;
+  margin-right: auto;
+  
+  padding-top: 20px;
 
 
 }
@@ -340,7 +352,7 @@ table,
   .devise {
    
       padding-top: 15px;
-      margin-top: 50px;
+      margin-top: 40px;
       width: 55%;
       margin-left: auto;
       margin-right: auto;
@@ -450,11 +462,14 @@ input, {
 // Indicators =================================================================
 
 .alert {
-
+  
+  margin-top: 40px;
+  margin-bottom: 0;
   a,
   .alert-link {
     color: #fff;
     text-decoration: underline;
+
   }
 
   .close {
@@ -469,6 +484,40 @@ input, {
     }
   }
 }
+
+/*flash*/
+.alert-error {
+    background-color: @brand-danger;
+    opacity: 0.6;
+    border-color: #eed3d7;
+    color: @state-danger-text;
+    text-align: left;
+    margin-top: 10px;
+ }
+
+.alert-alert {
+    background-color: @brand-danger;
+    opacity: 0.6;
+    border-color: #eed3d7;
+    color: @state-danger-text;
+    text-align: left;
+ }
+
+.alert-success {
+    background-color: @brand-success;
+    opacity: 0.6;
+    border-color: #d6e9c6;
+    color: @state-success-text;
+    text-align: left;
+ }
+
+.alert-notice {
+    background-color: @brand-warning;
+    opacity: 0.6;
+    border-color: #d6e9c6;
+    color: @state-warning-text;
+    text-align: left;
+ }
 
 // Progress bars ==============================================================
 
@@ -494,6 +543,9 @@ input, {
 .footer {
   padding-bottom: 40px;
   bottom: 0;
+  a {
+    text-align: inherit;
+  }
   
 }
 

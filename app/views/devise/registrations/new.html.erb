@@ -1,6 +1,9 @@
+<div class="row"><%= devise_error_messages! %></div>
+
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-<%= devise_error_messages! %>
+
 <div class="container">
+	
 	<form class="form-horizontal " role="form">
 		<div class="jumbotron devise">
     	<fieldset>

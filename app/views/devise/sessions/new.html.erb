@@ -1,7 +1,10 @@
+
+<div class="row"><%= devise_error_messages! %></div>
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :class => 'form-horizontal') do |f| %>
-<div class="container">
+
 	
 		<div class="jumbotron devise">
+
     	<fieldset>
       	<legend class="text-center"> Sign In </legend>  
 			
@@ -26,10 +29,9 @@
 				<%= f.submit "Sign in", :class => 'btn btn-small btn-info' %>
 				<div class="links"><%= render "devise/shared/links" %></div>
 			</div>
-		</div>
+		  </div>
 		</fieldset>
 
 		</div>
-	</form>
-</div>
+
 <% end %>

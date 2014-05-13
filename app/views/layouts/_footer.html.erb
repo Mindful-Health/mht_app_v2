@@ -1,0 +1,10 @@
+
+
+  <% if user_signed_in? %>
+  <footer class="footer pull-right">
+  	<nav>
+  		 Signed in as <%= current_user.email %>  &nbsp <%= link_to "Contact  ",  contact_path %>
+   		
+   	</nav>
+   </footer>
+  <% end %>

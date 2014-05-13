@@ -15,16 +15,22 @@
 
 	<% if user_signed_in? %>
 		<%= render 'layouts/sidebar' unless @disable_sidebar %>
-			<div class="container page-content-wrapper"> 
-				
-	
-						<%= yield %>
-						 
-					
-	    	</div>
+			<div class="container page-content-wrapper">
+				<%= render 'layouts/messages' %>
+				<%= yield %>
+				<%= render 'layouts/footer' %>
+			</div>
+						
+
 		
 	<% else %>
+	<div class= "container error-messages-wrapper">
+		<%= render 'layouts/messages' %>
+	</div>
+
 		<%=yield %>
+	
+
 		
 	<% end %>
      	

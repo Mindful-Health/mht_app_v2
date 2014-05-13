@@ -3,8 +3,13 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   
   protect_from_forgery with: :null_session
+
   
-  before_filter :set_global_search_variable, :configure_permitted_parameters, if: :devise_controller?
+  before_filter :authenticate_user!, :set_global_search_variable, :configure_permitted_parameters, if: :devise_controller?
+
+def after_sign_out_path_for(resource)
+  return "/users/sign_in"
+end
 
   protected
 
@@ -18,6 +23,8 @@ class ApplicationController < ActionController::Base
     @search = Patient.search(params[:q])
     @patients = @search.result
   end
+
+
 
 
 end
