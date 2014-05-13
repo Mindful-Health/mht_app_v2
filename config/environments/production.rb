@@ -76,10 +76,10 @@ MhtAppV2::Application.configure do
   config.action_mailer.default :charset => "utf-8"
 
   config.action_mailer.smtp_settings = {
-    :address => "127.0.0.1",
-    #address: "smtp.gmail.com",
-    :port => 1025,
-    #port: 587,
+    #:address => "127.0.0.1",
+    address: "smtp.gmail.com",
+    #:port => 1025,
+    port: 587,
     domain: ENV["GMAIL_DOMAIN"],
     authentication: "login",
     enable_starttls_auto: true,
