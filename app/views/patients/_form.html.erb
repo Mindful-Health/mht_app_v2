@@ -51,7 +51,7 @@
       <div class="form-group">
         <%= f.label :vitalThreshold, :class => 'col-lg-2 control-label'  %>
         <div class="col-lg-10">
-          <%= f.number_field :vitalThreshold, :class => 'input form-control' %>
+          <%= f.number_field(:vitalThreshold, :class => 'input form-control', in: 1..100, step: 1)%>
         </div>
       </div>
 

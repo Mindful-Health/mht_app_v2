@@ -11,6 +11,7 @@
           <th>Phone:</th>
           <th>Condition:</th>
           <th>Device ID:</th>
+          <th>Vital Threshold:</th>
           <th>Actions:</th>
         </tr>
       </thead>
@@ -21,6 +22,7 @@
           <td><%= @patient.phone %></td>
           <td><%= @patient.condition %></td>
           <td><%= @patient.deviceId %></td>
+          <td><%= @patient.vitalThreshold %></td>
           <td><%= link_to 'Edit', edit_patient_path(@patient) %></td>
         </tr>
       </tbody>
