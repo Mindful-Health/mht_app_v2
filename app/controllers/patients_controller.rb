@@ -56,9 +56,15 @@ class PatientsController < ApplicationController
     respond_to do |format|
       if @patient.update(patient_params)
 
-        format.html { redirect_to @patient, notice: 'Patient was successfully updated.' }
-        format.json { head :no_content }
-        #if @patient.update(threshold) =< @data 
+        #if @patient.update(threshold) =< @data
+          #ThresholdMailer.notification_email(@user).deliver 
+          #format.html { redirect_to @patient, notice: 'Patient was successfully updated.' }
+          #format.json { head :no_content }
+        #else
+
+          format.html { redirect_to @patient, notice: 'Patient was successfully updated.' }
+          format.json { head :no_content }
+
 
 
       else
