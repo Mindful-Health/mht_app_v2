@@ -6,6 +6,7 @@ class CreatePatients < ActiveRecord::Migration
       t.string :phone
       t.text :condition
       t.integer :deviceId
+      t.integer :vitalThreshold
 
       t.timestamps
     end

@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20140327225106) do
     t.string   "phone"
     t.text     "condition"
     t.integer  "deviceId"
+    t.integer  "vitalThreshold"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

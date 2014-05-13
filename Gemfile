@@ -7,6 +7,7 @@ gem 'coffee-rails', '4.0.1'
 gem 'uglifier', '2.1.1'
 gem 'jquery-rails', '3.0.4'
 gem 'ransack'
+gem 'newrelic_rpm'
 
 gem 'rails', '4.0.2'
 gem 'pg', '0.15.1'
