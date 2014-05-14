@@ -12,7 +12,10 @@ def after_sign_out_path_for(resource)
   return "/users/sign_in"
 end
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0e520fb5fa73b74abda8e33d28d7a4ec6eb19672
   protected
 
   def configure_permitted_parameters

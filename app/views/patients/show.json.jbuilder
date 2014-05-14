@@ -1,1 +1,1 @@
-json.extract! @patient, :name, :email, :phone, :condition, :deviceId, :created_at, :updated_at
+json.extract! @patient, :name, :email, :phone, :condition, :deviceId, :vitalThreshold, :created_at, :updated_at

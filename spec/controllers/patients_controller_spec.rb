@@ -90,26 +90,6 @@ describe PatientsController do
     end
   end
 
-  describe "GET edit" do
-    it "renders the edit patient form" do
-      @request.env["devise.mapping"] = Devise.mappings[:patient]
-      get :edit, {:id => patient.to_param}, valid_session
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
-        assert_select "form[action=?][method=?]", patient_path(@patient), "post" do
-          assert_select "input#patient_name[name=?]", "patient[name]"
-          assert_select "input#patient_email[name=?]", "patient[email]"
-          assert_select "input#patient_phone[name=?]", "patient[phone]"
-          assert_select "textarea#patient_condition[name=?]", "patient[condition]"
-          assert_select "input#patient_deviceId[name=?]", "patient[deviceId]"
-        end #end assert_select
-    end #end patient form
-    it "assigns the requested patient as @patient" do
-      patient = Patient.create! valid_attributes
-      get :edit, {:id => patient.to_param}, valid_session
-      assigns(:patient).should eq(patient)
-    end
-  end
-
   describe "POST create" do
     describe "with valid params" do
       it "creates a new Patient" do
