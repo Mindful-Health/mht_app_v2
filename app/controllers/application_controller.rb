@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :null_session
 
   #after_filter :send_threshold_email
-  before_filter :authenticate_user!, :set_global_search_variable, :configure_permitted_parameters, if: :devise_controller?
+  before_filter :set_global_search_variable, :configure_permitted_parameters, if: :devise_controller?
   
 
 def after_sign_out_path_for(resource)
