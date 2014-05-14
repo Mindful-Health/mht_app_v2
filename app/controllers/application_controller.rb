@@ -12,17 +12,6 @@ def after_sign_out_path_for(resource)
   return "/users/sign_in"
 end
 
-def send_threshold_email
-  #if Patient.vitalThreshold > @patient_data.spo2
-  @curPat = Patient.find(params[:id])
-  @curData = PatientData.find(params[:id])
-  if @curData.spo2 < @curPat.vitalThreshold
-    ThresholdMailer.notification_email(@user).deliver 
-    redirect_to :controller => 'patient', :action => 'show', :notice => 'Patient spo2 values are low!' 
-  end
-
-end
-
   protected
 
   def configure_permitted_parameters
