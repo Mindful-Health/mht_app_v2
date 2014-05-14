@@ -21,14 +21,9 @@ MhtAppV2::Application.configure do
   #email delivery method
   config.action_mailer.delivery_method = :smtp
 
-<<<<<<< HEAD
-  config.action_mailer.smtp_settings = { #:address => 'localhost', :port => 1025}
+  config.action_mailer.smtp_settings = { 
+    #:address => 'localhost', :port => 1025}
     port: 587,
-=======
-  config.action_mailer.smtp_settings = 
-  #{ :address => 'localhost', :port => 1025}
-  { port: 587,
->>>>>>> 0e520fb5fa73b74abda8e33d28d7a4ec6eb19672
     domain: ENV["GMAIL_DOMAIN"],
     authentication: 'login',
     enable_starttls_auto: true,
