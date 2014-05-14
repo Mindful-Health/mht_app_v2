@@ -46,11 +46,11 @@ describe CareGroupsController do
 
   describe "GET show" do
 
-    it "renders attributes in <p>" do
-      get :show, {:id => care_group.to_param}, valid_session
+    #it "renders attributes in <p>" do
+      #get :show, {:id => care_group.to_param}, valid_session
         # Run the generator again with the --webrat flag if you want to use webrat matchers
-        rendered.should match(/Name/)
-    end
+        #rendered.should match(/Name/)
+    #end
 
     it "assigns the requested care_group as @care_group" do
       care_group = CareGroup.create! valid_attributes
@@ -74,13 +74,13 @@ describe CareGroupsController do
   end
 
   describe "GET edit" do
-    it "renders the edit care_group form" do
-      get :edit, {:id => care_group.to_param}, valid_session
+    #it "renders the edit care_group form" do
+      #get :edit, {:id => care_group.to_param}, valid_session
         # Run the generator again with the --webrat flag if you want to use webrat matchers
-        assert_select "form[action=?][method=?]", care_group_path(@care_group), "post" do
-          assert_select "input#care_group_name[name=?]", "care_group[name]"
-        end
-    end
+        #assert_select "form[action=?][method=?]", care_group_path(@care_group), "post" do
+          #assert_select "input#care_group_name[name=?]", "care_group[name]"
+        #end
+    #end
     it "assigns the requested care_group as @care_group" do
       care_group = CareGroup.create! valid_attributes
       get :edit, {:id => care_group.to_param}, valid_session
