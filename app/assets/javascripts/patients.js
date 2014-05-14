@@ -144,7 +144,8 @@ $.ajax({
   dataType: "json",
   data: {patient_id: 1, 
          mode: "24 hours"},
-  url: "http://localhost:3000/patients/data",
+  //url: "http://localhost:3000/patients/data",
+  url: "http://mindfulhealth.herokuapp.com/patients/data",
   success: function(data) {
     load_data(data);
   }
@@ -161,8 +162,8 @@ clearInterval(refreshIntervalId);
     data: {
     patient_id: 1,
     mode: "1 week"},
-    url: "http://localhost:3000/patients/data",
-  
+    //url: "http://localhost:3000/patients/data",
+    url: "http://mindfulhealth.herokuapp.com/patients/data",
     success: function(data) {
   
       console.log(data);
