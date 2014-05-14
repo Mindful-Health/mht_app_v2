@@ -53,13 +53,26 @@ class PatientsController < ApplicationController
   # PATCH/PUT /patients/1
   # PATCH/PUT /patients/1.json
   def update
+    
+    
+
     respond_to do |format|
-      if @patient.update(patient_params)
+    if @patient.update(patient_params) 
+        #@curPat = Patient.find(params[:id])
+        #@curData = PatientData.find(params[:id])
+        @patientNum = 50
+       
+      if @patient.vitalThreshold > @patientNum 
 
-          format.html { redirect_to @patient, notice: 'Patient was successfully updated.' }
+        
+          ThresholdMailer.notification_email(current_user).deliver 
+          #redirect_to :controller => 'patient', :action => 'show', :notice => 'Patient spo2 values are low!' 
+          format.html { redirect_to @patient, notice: 'Patient spo2 values are low!'}
           format.json { head :no_content }
-
-
+      end
+        
+        format.html { redirect_to @patient, notice: 'Patient was successfully updated.' }
+        format.json { head :no_content }
 
       else
         format.html { render action: 'edit' }
@@ -102,6 +115,10 @@ class PatientsController < ApplicationController
     def patient_params
       params.require(:patient).permit(:name, :email, :phone, :condition, :deviceId, :vitalThreshold)
     end
+
+    #def patient_data_params
+    #  params.require(:patient).permit(:patient_id)
+    #end
 
     
 end

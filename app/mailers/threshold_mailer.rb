@@ -1,11 +1,12 @@
 class ThresholdMailer < ActionMailer::Base
-  default from: "from@example.com"
+  default from: "mindful.health.technologies@gmail.com"
 
-  def notification_email(user)
-  	@user = user
-  	@url = 'http://example.com/login'
+  def notification_email(current_user)
+  	@user = current_user
+  	@resource = current_resource
+  	@url = 'http://localhost:3000/users/sign_in'
 
-  	mail(to: @user.email, subject: 'Patient Vitals are Critical')
+  	mail(:to => current_user.email, :subject => 'Patient Vitals are Critical')
 
   end
 end

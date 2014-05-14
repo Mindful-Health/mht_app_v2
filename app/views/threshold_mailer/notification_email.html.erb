@@ -1,10 +1,12 @@
 <div class="container-fluid">
-	<h2 class="text-center">Hello <%= @resource.email %>!</h2>
+	<h2 class="text-center">Hello <%= @user.name %>!</h2>
 
+	<div class="span6 text-center">
+		
 	<div class="span6 text-center">
 		<p>One of your patients has dropped below their threshold value. Please click the link below to login. </p>
 
-		<p><%= link_to "Login", new_user_session_path %></p>
+		<p><%= link_to "Login", 'http://localhost:3000'  %></p>
 
 		<p>Please login at your earliest convenience, this may be an emergency.</p>
 		
