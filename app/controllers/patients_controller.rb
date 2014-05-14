@@ -96,10 +96,10 @@ class PatientsController < ApplicationController
 
 def send_threshold_email
   #if Patient.vitalThreshold > @patient_data.spo2
-  @curPat = Patient.find(params[:id])
+  #@curPat = Patient.find(params[:id])
   #@curPat = Patient.find_by :patient_id 1
   #@curData = PatientData.find(params[:id])
-  @curData = PatientData.where(:patient_id => params[:patient_id])
+  #@curData = PatientData.where(:patient_id => params[:patient_id])
   #@user = User.find_by :id 1
   #@currentID = 1
   #@curData = PatientData.find_by :patient_id @currentID

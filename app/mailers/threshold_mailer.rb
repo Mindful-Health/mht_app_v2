@@ -8,7 +8,7 @@ class ThresholdMailer < ActionMailer::Base
   	@url = 'http://example.com/login'
 
   	#mail(to: @user.email, subject: 'Patient Vitals are Critical')
-  	mail(to: current_user.email, subject: 'Patient Vitals are Critical')
+  	#mail(to: current_user.email, subject: 'Patient Vitals are Critical')
 
   end
 end
