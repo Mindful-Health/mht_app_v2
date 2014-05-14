@@ -5,6 +5,7 @@ class ThresholdMailer < ActionMailer::Base
   	@user = user
   	@url = 'http://example.com/login'
 
-  	mail(to: @user.email, subject: 'Urgent Notification')
+  	mail(to: @user.email, subject: 'Patient Vitals are Critical')
+
   end
 end
