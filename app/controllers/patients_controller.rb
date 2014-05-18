@@ -1,7 +1,7 @@
 class PatientsController < ApplicationController
   before_filter :disable_sidebar, only: [:index]
   before_action :set_patient, only: [:show, :edit, :update, :destroy]
-  before_action :send_threshold_email
+  # before_action :send_threshold_email
   layout 'application', :except => [:index]
   # GET /patients
   # GET /patients.json
@@ -54,23 +54,21 @@ class PatientsController < ApplicationController
   # PATCH/PUT /patients/1
   # PATCH/PUT /patients/1.json
   def update
-    
-    
 
     respond_to do |format|
     if @patient.update(patient_params) 
-        #@curPat = Patient.find(params[:id])
+        #curPat = Patient.find(params[:id])
         #@curData = PatientData.find(params[:id])
-        @patientNum = 50
+       #@patientNum = 50
        
-      if @patient.vitalThreshold > @patientNum 
+      #if @patient.vitalThreshold > @patientNum 
 
         
-          ThresholdMailer.notification_email(current_user).deliver 
+          #ThresholdMailer.notification_email(current_user).deliver 
           #redirect_to :controller => 'patient', :action => 'show', :notice => 'Patient spo2 values are low!' 
-          format.html { redirect_to @patient, notice: 'Patient spo2 values are low!'}
-          format.json { head :no_content }
-      end
+          #format.html { redirect_to @patient, notice: 'Patient spo2 values are low!'}
+          #format.json { head :no_content }
+      #end
         
         format.html { redirect_to @patient, notice: 'Patient was successfully updated.' }
         format.json { head :no_content }
@@ -120,7 +118,6 @@ def send_threshold_email
     #ThresholdMailer.notification_email(current_user.email).deliver 
     #redirect_to :controller => 'patient', :action => 'show', :notice => 'Patient spo2 values are low!' 
   #end
-
 end
 
   private
